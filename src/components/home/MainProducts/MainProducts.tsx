@@ -1,28 +1,12 @@
 import Image from "next/image";
 import styles from "./MainProducts.module.sass";
-
-const getProducts = async () => {
-  try {
-    const response = await fetch(
-      `${process.env.SHOPIFY_HOSTNAME}/admin/api/2023-10/products.json`,
-      {
-        headers: new Headers({
-          "X-Shopify-Access-Token": process.env.SHOPIFY_API_KEY || "",
-        }),
-      }
-    );
-    throw new Error("Error");
-    const { products } = await response.json();
-
-    return products;
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { getProducts } from "../../../services/shopify";
 
 export const MainProducts = async () => {
-  const products = await getProducts();
-  console.log(products);
+  const response = await fetch("http://localhost:3000/api");
+
+  const { products } = await response.json();
+
   return (
     <section className={styles.MainProducts}>
       <h3>New products released</h3>
