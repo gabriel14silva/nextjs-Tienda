@@ -40,7 +40,7 @@ export const Description = () => {
       <div className={styles.Description__text}>
         <h2>Bring the future today</h2>
         <p>
-          Future World: Your Gateway to Tomorrow's Tech! Dive into a world of
+          Future World: Your Gateway to Tomorrows Tech! Dive into a world of
           cutting-edge gadgets and gear. Stay ahead of the curve and redefine
           your digital lifestyle with us.
         </p>
